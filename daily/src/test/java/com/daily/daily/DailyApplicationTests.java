@@ -18,31 +18,31 @@ import com.daily.daily.yd.service.BankCodeCopyService;
 @SpringBootTest
 class DailyApplicationTests {
 
-	@Autowired
-	private BankCodeCopyMapper BankCodeCopyMapper;
-	
-	@Autowired
-	private BankCodeCopyService bankCodeCopyService;
-	
+//	@Autowired
+//	private BankCodeCopyMapper BankCodeCopyMapper;
+//	
+//	@Autowired
+//	private BankCodeCopyService bankCodeCopyService;
+//	
+////	@Test
+//	void contextLoads() {
+//		List<BankEntity> parseArray = JSON.parseArray(ReadFileUtil.readJsonFile("backList.json"),BankEntity.class);
+//		for (BankEntity bankEntity : parseArray) {
+//			String bankName = bankEntity.getBankName();
+//			if(StringUtils.isNotBlank(bankName) && bankName.length()>4 && bankName.contains("中国")) {
+//				bankName = bankName.substring(2, bankName.length());
+//			}
+//			UpdateWrapper<BankCodeCopy> updateWrapper = new UpdateWrapper<BankCodeCopy>();
+//			updateWrapper.set("bc_alias_bankCode", bankEntity.getBankCode());
+//			updateWrapper.like("bc_bankName", bankName);
+//			BankCodeCopyMapper.update(null, updateWrapper);
+//		}
+//	}
+//	
+//	
 //	@Test
-	void contextLoads() {
-		List<BankEntity> parseArray = JSON.parseArray(ReadFileUtil.readJsonFile("backList.json"),BankEntity.class);
-		for (BankEntity bankEntity : parseArray) {
-			String bankName = bankEntity.getBankName();
-			if(StringUtils.isNotBlank(bankName) && bankName.length()>4 && bankName.contains("中国")) {
-				bankName = bankName.substring(2, bankName.length());
-			}
-			UpdateWrapper<BankCodeCopy> updateWrapper = new UpdateWrapper<BankCodeCopy>();
-			updateWrapper.set("bc_alias_bankCode", bankEntity.getBankCode());
-			updateWrapper.like("bc_bankName", bankName);
-			BankCodeCopyMapper.update(null, updateWrapper);
-		}
-	}
-	
-	
-	@Test
-	void transcationTest() throws Exception {
-		bankCodeCopyService.updateBankCodeCopy("55555");
-	}
+//	void transcationTest() throws Exception {
+//		bankCodeCopyService.updateBankCodeCopy("55555");
+//	}
      
 }
