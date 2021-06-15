@@ -12,6 +12,7 @@
 	<artifactId>daily</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>daily</name>
+	<packaging>war</packaging>
 	<description>Demo project for Spring Boot</description>
 	<properties>
 		<java.version>1.8</java.version>
@@ -20,7 +21,30 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
+			<!-- 不依赖内嵌tomcat -->
+          	<exclusions>
+				<exclusion>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-starter-tomcat</artifactId>
+				</exclusion>
+			</exclusions>
 		</dependency>
+		
+		<dependency>
+		
+		<groupId>org.apache.tomcat</groupId>
+			<artifactId>tomcat-servlet-api</artifactId>
+			<version>8.0.36</version>
+			<scope>provided</scope>
+		</dependency>
+		
+		<!-- 排除springboot内置tomcat容器的SpringBootServletInitializer接口需要依赖 javax.servlet -->
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>javax.servlet-api</artifactId>
+			<scope>provided</scope>
+		</dependency>
+		
 
 		<dependency>
 			<groupId>org.projectlombok</groupId>
